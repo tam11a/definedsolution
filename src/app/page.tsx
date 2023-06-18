@@ -1,113 +1,152 @@
-import Image from 'next/image'
+import Image from "next/image";
+import services from "@/util/services";
+import Link from "next/link";
+import React from "react";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+	return (
+		<main className="relative">
+			{/* Splash */}
+			<h1 className="relative text-2xl sm:text-4xl md:text-5xl max-w-lg md:max-w-3xl text-center mx-auto mt-[20vh] !leading-snug px-3">
+				From Pixels to{" "}
+				<span className="font-semibold text-secondary">Perfection</span>: <br />{" "}
+				Crafting Captivating{" "}
+				<span className="font-semibold text-primary">Websites</span> and{" "}
+				<span className="font-semibold text-primary">Digital</span> Solutions
+				<Image
+					src={"/splash-curve.png"}
+					height={400}
+					width={550}
+					alt=""
+					className="mix-blend-screen w-3/4 sm:w-full max-w-xl absolute top-0 -translate-y-[25%] sm:-translate-y-[20%] left-1/2 -translate-x-1/2 select-none"
+				/>
+			</h1>
+			{/* Marqueee */}
+			<div className="flex flex-col overflow-hidden relative mt-32 py-14 mix-blend-lighten">
+				<div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-background to-background via-transparent from-10% to-90%" />
+				<div className="flex flex-row overflow-hidden gap-3 py-[6px] font-serif tracking-widest text-xs sm:text-sm">
+					{services?.services?.slice?.(0, 20)?.map?.((service) => (
+						<p
+							key={service}
+							className={`whitespace-nowrap px-4 font-semibold py-2 ${
+								service.at(-1) === "y"
+									? "bg-primary text-background font-bold"
+									: service.at(-1) === "y" || service.at(-1) === "e"
+									? "bg-secondary text-background font-bold"
+									: "bg-[#202730]"
+							}  rounded shadow shadow-black`}
+						>
+							{service}
+						</p>
+					))}
+				</div>
+				<div className="flex flex-row overflow-hidden gap-3 py-[6px] font-serif tracking-widest text-xs sm:text-sm">
+					{services?.services?.slice?.(20, 50)?.map?.((service) => (
+						<p
+							key={service}
+							className={`whitespace-nowrap px-4 font-semibold py-2 ${
+								service.at(-1) === "t"
+									? "bg-primary text-background font-bold"
+									: service.at(-1) === "y" || service.at(-1) === "e"
+									? "bg-secondary text-background font-bold"
+									: "bg-[#202730]"
+							}  rounded shadow shadow-black`}
+						>
+							{service}
+						</p>
+					))}
+				</div>
+				<div className="flex flex-row overflow-hidden gap-3 py-[6px] font-serif tracking-widest text-xs sm:text-sm">
+					{services?.services?.slice?.(50)?.map?.((service) => (
+						<p
+							key={service}
+							className={`whitespace-nowrap px-4 font-semibold py-2 ${
+								service.at(-1) === "t"
+									? "bg-primary text-background font-bold"
+									: service.at(-1) === "y" || service.at(-1) === "e"
+									? "bg-secondary text-background font-bold"
+									: "bg-[#202730]"
+							}  rounded shadow shadow-black`}
+						>
+							{service}
+						</p>
+					))}
+				</div>
+			</div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+			{/* About */}
+			<div>
+				<Image
+					src={"/title.svg"}
+					height={200}
+					width={130}
+					alt="defined solution"
+					className="mx-auto"
+				/>
+				<p className="max-w-sm text-center mx-auto mt-5 text-sm sm:text-base">
+					At Defined Solution, We attract & retain quality customers with a{" "}
+					<span className="text-secondary font-bold">
+						custom designed website
+					</span>
+					, that does not break the bank.
+				</p>
+			</div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+			{/* Reels */}
+			<div className="flex flex-row items-center gap-2 max-w-6xl mx-auto mt-10 px-4 relative">
+				<div className="bg-[url(/reels/left.jpg)] hidden sm:block h-80 lg:h-96 w-[190px] lg:w-[280px] bg-cover bg-center rounded-xl" />
+				<div className="bg-[url(/reels/center.jpg)] h-80 lg:h-96 flex-1 bg-cover bg-center rounded-xl" />
+				<div className="bg-[url(/reels/right.jpg)] hidden sm:block h-80 lg:h-96 w-[190px] lg:w-[280px] bg-cover bg-center rounded-xl" />
+				<p className="absolute bottom-0 translate-y-[55%] translate-x-8 text-[6rem] md:text-[10rem] font-koulen">
+					<span className="opacity-60">REELS</span>
+					<Image
+						src={"/polygon.png"}
+						height={30}
+						width={30}
+						alt=""
+						className="absolute top-1/2 right-0 translate-x-14"
+					/>
+				</p>
+			</div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+			{/* What We Do */}
+			<div className="max-w-4xl mx-auto mt-32 px-4">
+				<p className="text-2xl text-justify mb-16">
+					<span className="min-w-[20vw] mr-5 inline-block text-base text-secondary font-bold">
+						What We Do
+					</span>{" "}
+					We believe that we can live a world where every product or service has
+					an easy to use experience on all platforms. And our mission is to make
+					it happen.
+				</p>
+				<div className="flex flex-col gap-6">
+					<div className="w-full h-[2px] bg-slate-800 my-2" />
+					{services.whatWeDo?.map?.((what, index) => (
+						<React.Fragment key={index}>
+							<div className="flex flex-col md:flex-row gap-7 justify-between">
+								<p className="text-2xl font-bold">
+									/ {index + 1 < 10 ? <>0{index + 1}</> : index + 1}
+								</p>
+								<p className="font-koulen text-5xl max-w-[243px] bg-gradient-to-r from-secondary to-white from-20% to-30% text-transparent bg-clip-text">
+									{what.title}
+								</p>
+								<div className="max-w-lg flex flex-col justify-between gap-5">
+									<p className="font-serif text-sm text-justify">
+										{what.content}
+									</p>
+									<Link
+										href={what.to}
+										className="text-xs text-primary tracking-[0.25rem] font-bold "
+									>
+										VIEW PROJECTS
+									</Link>
+								</div>
+							</div>
+							<div className="w-full h-[2px] bg-slate-800 my-2" />
+						</React.Fragment>
+					))}
+				</div>
+			</div>
+		</main>
+	);
 }
