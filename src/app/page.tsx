@@ -2,6 +2,8 @@ import Image from "next/image";
 import services from "@/util/services";
 import Link from "next/link";
 import React from "react";
+import Showcase from "./Showcase";
+import Contact from "./Contact";
 
 export default function Home() {
 	return (
@@ -125,9 +127,10 @@ export default function Home() {
 						<React.Fragment key={index}>
 							<div className="flex flex-col md:flex-row gap-7 justify-between">
 								<p className="text-2xl font-bold">
-									/ {index + 1 < 10 ? <>0{index + 1}</> : index + 1}
+									<span className="text-secondary font-extrabold">/</span>{" "}
+									{index + 1 < 10 ? <>0{index + 1}</> : index + 1}
 								</p>
-								<p className="font-koulen text-5xl max-w-[243px] bg-gradient-to-r from-secondary to-white from-20% to-30% text-transparent bg-clip-text">
+								<p className="font-koulen text-5xl max-w-[243px] bg-gradient-to-r from-secondary to-primary text-transparent bg-clip-text">
 									{what.title}
 								</p>
 								<div className="max-w-lg flex flex-col justify-between gap-5">
@@ -146,6 +149,51 @@ export default function Home() {
 						</React.Fragment>
 					))}
 				</div>
+			</div>
+
+			{/* Showcase */}
+			<div className="relative max-w-4xl mx-auto mt-24 px-3 -mb-6 md:-mb-12 z-10">
+				<div className="relative w-fit text-[5rem] md:text-[8rem] font-koulen ml-6">
+					<div
+						className="opacity-60"
+						style={{
+							lineHeight: 0.9,
+						}}
+					>
+						<p>OUR</p>
+						<p>SHOWCASE</p>
+					</div>
+					<Image
+						src={"/polygon.png"}
+						height={30}
+						width={30}
+						alt=""
+						className="absolute top-1/2 right-0 translate-x-14"
+					/>
+				</div>
+			</div>
+			<Showcase />
+
+			{/* Contact */}
+			<div className="max-w-4xl mx-auto mt-32">
+				<div className="grid grid-cols-1 sm:grid-cols-2 gap-3 px-4">
+					<div
+						className="text-[5rem] font-koulen"
+						style={{
+							lineHeight: 0.9,
+						}}
+					>
+						<p>Say</p>
+						<p>HELLO,</p>
+					</div>
+					<div className="flex flex-row sm:items-end sm:justify-end">
+						<p className="max-w-xs">
+							Feel free to contact us. We will get back to you as soon as we
+							can.
+						</p>
+					</div>
+				</div>
+				<Contact />
 			</div>
 		</main>
 	);
