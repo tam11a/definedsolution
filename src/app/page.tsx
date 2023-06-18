@@ -30,7 +30,7 @@ export default function Home() {
 					{services?.services?.slice?.(0, 20)?.map?.((service) => (
 						<p
 							key={service}
-							className={`whitespace-nowrap px-4 font-semibold py-2 ${
+							className={`whitespace-nowrap px-4 font-bold py-2 ${
 								service.at(-1) === "y"
 									? "bg-primary text-background font-bold"
 									: service.at(-1) === "y" || service.at(-1) === "e"
@@ -46,7 +46,7 @@ export default function Home() {
 					{services?.services?.slice?.(20, 50)?.map?.((service) => (
 						<p
 							key={service}
-							className={`whitespace-nowrap px-4 font-semibold py-2 ${
+							className={`whitespace-nowrap px-4 font-bold py-2 ${
 								service.at(-1) === "t"
 									? "bg-primary text-background font-bold"
 									: service.at(-1) === "y" || service.at(-1) === "e"
@@ -62,7 +62,7 @@ export default function Home() {
 					{services?.services?.slice?.(50)?.map?.((service) => (
 						<p
 							key={service}
-							className={`whitespace-nowrap px-4 font-semibold py-2 ${
+							className={`whitespace-nowrap px-4 font-bold py-2 ${
 								service.at(-1) === "t"
 									? "bg-primary text-background font-bold"
 									: service.at(-1) === "y" || service.at(-1) === "e"
