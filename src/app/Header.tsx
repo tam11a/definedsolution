@@ -3,8 +3,38 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { gsap } from "gsap";
 
 const Header: React.FC = () => {
+	const animateNav = () => {
+		gsap.from("nav.sticky", {
+			x: "-200%",
+			opacity: 0,
+			duration: 2,
+			ease: "power4.inOut",
+			delay: 6,
+		});
+		gsap.from(".logo-here", {
+			scale: 0,
+			opacity: 0,
+			duration: 1,
+			stagger: 0.2,
+			ease: "power4.inOut",
+			delay: 8.3,
+		});
+		gsap.from(".floating-nav", {
+			y: "100%",
+			opacity: 0,
+			duration: 1,
+			stagger: 0.3,
+			ease: "power4.inOut",
+			delay: 9.2,
+		});
+	};
+
+	React.useEffect(() => {
+		animateNav();
+	}, []);
 	return (
 		<header>
 			<nav className="sticky top-0 z-10 bg-background backdrop-filter backdrop-blur-md border-b border-slate-800 bg-opacity-30 font-serif">

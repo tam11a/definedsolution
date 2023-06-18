@@ -1,36 +1,143 @@
+"use client";
 import Image from "next/image";
 import services from "@/util/services";
 import Link from "next/link";
 import React from "react";
 import Showcase from "./Showcase";
 import Contact from "./Contact";
+import { gsap } from "gsap";
+import SplitType from "split-type";
 
 export default function Home() {
+	React.useEffect(() => {
+		// desired effect, but needs to be seamless
+
+		// splash animation
+		new SplitType(".hero-letters");
+
+		gsap.from(".hero-letters .char", {
+			y: "100%",
+			opacity: 0,
+			duration: 1,
+			stagger: 0.1,
+			ease: "power4.inOut",
+			// delay: 2,
+		});
+
+		gsap.from(".hero-image", {
+			scale: 0,
+			opacity: 0,
+			duration: 4,
+			ease: "power4.inOut",
+			delay: 7,
+		});
+
+		gsap.from(".hero-marquee", {
+			scale: 0,
+			opacity: 0,
+			duration: 3,
+			ease: "power4.inOut",
+			delay: 6,
+		});
+
+		// marquee animation
+		const tl1 = gsap.timeline({
+			repeat: -1,
+			defaults: {
+				ease: "none",
+			},
+		});
+
+		const tl2 = gsap.timeline({
+			repeat: -1,
+			defaults: {
+				ease: "none",
+			},
+		});
+
+		const tl3 = gsap.timeline({
+			repeat: -1,
+			defaults: {
+				ease: "none",
+			},
+		});
+
+		tl1.fromTo(
+			".card-1",
+			{
+				x: 0,
+				duration: 60,
+			},
+			{
+				duration: 60,
+				x: document.getElementById("mrq-1")?.scrollWidth || 0,
+				onComplete: () => {
+					tl1.reverse(0);
+				},
+			}
+		);
+
+		tl2.fromTo(
+			".card-2",
+			{
+				x: 0,
+				duration: 45,
+			},
+			{
+				x: document.getElementById("mrq-2")?.scrollWidth || 0,
+				duration: 45,
+				onComplete: () => {
+					tl2.reverse(0);
+				},
+			}
+		);
+
+		tl3.fromTo(
+			".card-3",
+			{
+				x: 0,
+				duration: 50,
+			},
+			{
+				x: document.getElementById("mrq-3")?.scrollWidth || 0,
+				duration: 50,
+				onComplete: () => {
+					tl3.reverse(0);
+				},
+			}
+		);
+	}, []);
+
 	return (
 		<main className="relative">
 			{/* Splash */}
-			<h1 className="relative text-2xl sm:text-4xl md:text-5xl max-w-lg md:max-w-3xl text-center mx-auto mt-[20vh] !leading-snug px-3">
-				From Pixels to{" "}
-				<span className="font-semibold text-secondary">Perfection</span>: <br />{" "}
-				Crafting Captivating{" "}
-				<span className="font-semibold text-primary">Websites</span> and{" "}
-				<span className="font-semibold text-primary">Digital</span> Solutions
+			<h1 className="hero-letters relative text-2xl sm:text-4xl md:text-5xl max-w-lg md:max-w-3xl text-center mx-auto mt-[20vh] !leading-snug px-3">
+				<span className="z-10">
+					From Pixels to{" "}
+					<span className="font-semibold text-secondary">Perfection</span>:{" "}
+					<br /> Crafting Captivating{" "}
+					<span className="font-semibold text-primary">Websites</span> and{" "}
+					<span className="font-semibold text-primary">Digital</span> Solutions
+				</span>
 				<Image
 					src={"/splash-curve.png"}
 					height={400}
 					width={550}
 					alt=""
-					className="mix-blend-screen w-3/4 sm:w-full max-w-xl absolute top-0 -translate-y-[25%] sm:-translate-y-[20%] left-1/2 -translate-x-1/2 select-none"
+					className="hero-image mix-blend-screen w-3/4 sm:w-full max-w-xl absolute top-0 -translate-y-[25%] sm:-translate-y-[20%] left-1/2 -translate-x-1/2 select-none"
 				/>
 			</h1>
 			{/* Marqueee */}
-			<div className="flex flex-col overflow-hidden relative mt-32 py-14 mix-blend-lighten">
-				<div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-background to-background via-transparent from-10% to-90%" />
-				<div className="flex flex-row overflow-hidden gap-3 py-[6px] font-serif tracking-widest text-xs sm:text-sm">
+			<div className="hero-marquee flex flex-col overflow-hidden relative mt-32 py-14 mix-blend-lighten">
+				<div className="absolute z-10 top-0 left-0 w-full h-full bg-gradient-to-r from-background to-background via-transparent from-10% to-90%" />
+				<div
+					id="mrq-1"
+					className="flex flex-row justify-end overflow-hidden gap-3 py-[6px] font-serif tracking-widest text-xs sm:text-sm"
+				>
 					{services?.services?.slice?.(0, 20)?.map?.((service) => (
 						<p
 							key={service}
-							className={`whitespace-nowrap px-4 font-bold py-2 ${
+							className={`card-1 whitespace-nowrap px-4 font-bold py-2 ${
 								service.at(-1) === "y"
 									? "bg-primary text-background font-bold"
 									: service.at(-1) === "y" || service.at(-1) === "e"
@@ -42,11 +149,14 @@ export default function Home() {
 						</p>
 					))}
 				</div>
-				<div className="flex flex-row overflow-hidden gap-3 py-[6px] font-serif tracking-widest text-xs sm:text-sm">
+				<div
+					id="mrq-2"
+					className=" flex flex-row justify-end overflow-hidden gap-3 py-[6px] font-serif tracking-widest text-xs sm:text-sm"
+				>
 					{services?.services?.slice?.(20, 50)?.map?.((service) => (
 						<p
 							key={service}
-							className={`whitespace-nowrap px-4 font-bold py-2 ${
+							className={`card-2 whitespace-nowrap px-4 font-bold py-2 ${
 								service.at(-1) === "t"
 									? "bg-primary text-background font-bold"
 									: service.at(-1) === "y" || service.at(-1) === "e"
@@ -58,11 +168,14 @@ export default function Home() {
 						</p>
 					))}
 				</div>
-				<div className="flex flex-row overflow-hidden gap-3 py-[6px] font-serif tracking-widest text-xs sm:text-sm">
+				<div
+					id="mrq-3"
+					className="flex flex-row justify-end overflow-hidden gap-3 py-[6px] font-serif tracking-widest text-xs sm:text-sm"
+				>
 					{services?.services?.slice?.(50)?.map?.((service) => (
 						<p
 							key={service}
-							className={`whitespace-nowrap px-4 font-bold py-2 ${
+							className={`card-3 whitespace-nowrap px-4 font-bold py-2 ${
 								service.at(-1) === "t"
 									? "bg-primary text-background font-bold"
 									: service.at(-1) === "y" || service.at(-1) === "e"
