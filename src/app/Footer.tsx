@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
 					icon={"pixelarticons:heart"}
 					className="text-pink-600 inline mx-1"
 				/>{" "}
-				<span className="font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+				<span className="font-extrabold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
 					Defined Solution
 				</span>
 			</p>
