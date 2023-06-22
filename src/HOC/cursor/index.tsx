@@ -18,7 +18,17 @@ const Cursor: React.FC = () => {
 		);
 
 	const handleMouseMove = (event: any) => {
-		setPosition({ x: event.clientX, y: event.clientY });
+		const pos = { x: event.clientX, y: event.clientY };
+		const whiteOne = document.getElementById("white-cursor");
+		whiteOne!.style.top = `${pos.y - 48}px`;
+		whiteOne!.style.left = `${pos.x - 48}px`;
+		const blueOne = document.getElementById("blue-cursor");
+		blueOne!.style.top = `${pos.y - 6}px`;
+		blueOne!.style.left = `${pos.x + 23}px`;
+		const pinkOne = document.getElementById("pink-cursor");
+		pinkOne!.style.top = `${pos.y - 50}px`;
+		pinkOne!.style.left = `${pos.x + 25}px`;
+		setPosition(pos);
 	};
 
 	React.useEffect(() => {
