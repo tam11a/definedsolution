@@ -10,6 +10,7 @@ const Showcase: React.FC = () => {
 			<Link
 				href="#"
 				className="rounded-md sm:rounded-xl overflow-hidden relative"
+				data-aos="flip-left"
 			>
 				<Image
 					src={"/showcase/1.jpg"}
@@ -29,6 +30,7 @@ const Showcase: React.FC = () => {
 			<Link
 				href="#"
 				className="rounded-md sm:rounded-xl sm:col-span-2 sm:row-span-2 overflow-hidden relative"
+				data-aos="flip-right"
 			>
 				<Image
 					src={"/showcase/2.jpg"}
@@ -48,6 +50,7 @@ const Showcase: React.FC = () => {
 			<Link
 				href="#"
 				className="rounded-md sm:rounded-xl row-span-2 sm:row-span-4 overflow-hidden relative"
+				data-aos="flip-left"
 			>
 				<Image
 					src={"/showcase/3.jpg"}
@@ -67,6 +70,7 @@ const Showcase: React.FC = () => {
 			<Link
 				href="#"
 				className="rounded-md sm:rounded-xl overflow-hidden relative"
+				data-aos="flip-right"
 			>
 				<Image
 					src={"/showcase/4.jpg"}
@@ -86,6 +90,7 @@ const Showcase: React.FC = () => {
 			<Link
 				href="#"
 				className="rounded-md sm:rounded-xl overflow-hidden relative"
+				data-aos="flip-right"
 			>
 				<Image
 					src={"/showcase/5.jpg"}
@@ -105,6 +110,7 @@ const Showcase: React.FC = () => {
 			<Link
 				href="#"
 				className="rounded-md sm:rounded-xl col-span-2 row-span-2 overflow-hidden relative"
+				data-aos="flip-right"
 			>
 				<Image
 					src={"/showcase/6.jpg"}

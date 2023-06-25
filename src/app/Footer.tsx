@@ -7,12 +7,18 @@ const Footer: React.FC = () => {
 	return (
 		<footer className="bg-gradient-to-b from-transparent to-35% to-[#0d141cc4] py-20">
 			<div className="grid grid-cols-2 divide-x-2 divide-slate-700 font-serif tracking-[0.17rem]">
-				<div className="flex flex-col items-end mr-3 py-3 gap-2 text-xs [&>a]:text-slate-300 [&>a:hover]:text-white">
+				<div
+					data-aos="fade-right"
+					className="flex flex-col items-end mr-3 py-3 gap-2 text-xs [&>a]:text-slate-300 [&>a:hover]:text-white"
+				>
 					<Link href={"#"}>LinkedIn</Link>
 					<Link href={"#"}>Facebook</Link>
 					<Link href={"#"}>YouTube</Link>
 				</div>
-				<div className="flex flex-col pl-4 py-3 gap-2 text-xs [&>a]:text-slate-300 [&>a:hover]:text-white">
+				<div
+					data-aos="fade-left"
+					className="flex flex-col pl-4 py-3 gap-2 text-xs [&>a]:text-slate-300 [&>a:hover]:text-white"
+				>
 					<Link href={"#"}>Dribble</Link>
 					<Link href={"#"}>Instagram</Link>
 					<Link href={"#"}>Behance</Link>

@@ -60,7 +60,7 @@ const Cursor: React.FC = () => {
 						position: "absolute",
 						top: position.y - 48,
 						left: position.x - 48,
-						transition: "ease-out 1s",
+						transition: "ease-out 0.6s",
 					}}
 				/>
 				<div
@@ -70,7 +70,7 @@ const Cursor: React.FC = () => {
 						position: "absolute",
 						top: position.y - 6,
 						left: position.x + 23,
-						transition: "ease-out 1.2s",
+						transition: "ease-out 0.8s",
 					}}
 				/>
 				<div
@@ -80,7 +80,7 @@ const Cursor: React.FC = () => {
 						position: "absolute",
 						top: position.y - 50,
 						left: position.x + 25,
-						transition: "ease-out 1.4s",
+						transition: "ease-out 1s",
 					}}
 				/>
 			</div>

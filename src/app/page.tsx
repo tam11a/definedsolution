@@ -7,7 +7,11 @@ import Showcase from "./Showcase";
 import Contact from "./Contact";
 import { gsap } from "gsap";
 import SplitType from "split-type";
-// import dynamic from "next/dynamic";
+import AOS from "aos";
+
+import "aos/dist/aos.css";
+
+import dynamic from "next/dynamic";
 // import HaloEffect from "./HaloEffect";
 // const HaloEffect = dynamic(() => import("./HaloEffect"), {
 // 	ssr: false,
@@ -16,6 +20,9 @@ import SplitType from "split-type";
 
 export default function Home() {
 	React.useEffect(() => {
+		AOS.init({
+			duration: 1500,
+		});
 		// desired effect, but needs to be seamless
 		// splash animation
 		gsap.from(".hero-logo", {
@@ -159,7 +166,7 @@ export default function Home() {
 						alt="defined solution"
 						className="hero-logo mx-auto mb-6"
 					/>
-					<span className="z-10">
+					<span className="z-10 leading-snug">
 						From Pixels to{" "}
 						<span className="font-semibold text-secondary">Perfection</span>:{" "}
 						<br /> Crafting Captivating{" "}
@@ -239,7 +246,7 @@ export default function Home() {
 				</div>
 
 				{/* About */}
-				<div>
+				<div data-aos="fade-up">
 					<p className="max-w-sm text-center mx-auto mt-5 text-sm sm:text-base">
 						At Defined Solution, We attract & retain quality customers with a{" "}
 						<span className="text-secondary font-bold">
@@ -251,11 +258,25 @@ export default function Home() {
 
 				{/* Reels */}
 				<div className="flex flex-row items-center gap-2 max-w-6xl mx-auto mt-10 px-4 relative">
-					<div className="bg-[url(/reels/left.jpg)] hidden sm:block h-80 lg:h-96 w-[190px] lg:w-[280px] bg-cover bg-center rounded-xl" />
-					<div className="bg-[url(/reels/center.jpg)] h-80 lg:h-96 flex-1 bg-cover bg-center rounded-xl" />
-					<div className="bg-[url(/reels/right.jpg)] hidden sm:block h-80 lg:h-96 w-[190px] lg:w-[280px] bg-cover bg-center rounded-xl" />
-					<p className="absolute bottom-0 translate-y-[55%] translate-x-8 text-[6rem] md:text-[10rem] font-koulen">
-						<span className="opacity-60">REELS</span>
+					<div
+						className="bg-[url(/reels/left.jpg)] hidden sm:block h-80 lg:h-96 w-[190px] lg:w-[280px] bg-cover bg-center rounded-xl"
+						data-aos="zoom-in-left"
+					/>
+					<div
+						className="bg-[url(/reels/center.jpg)] h-80 lg:h-96 flex-1 bg-cover bg-center rounded-xl"
+						data-aos="zoom-in-down"
+					/>
+					<div
+						className="bg-[url(/reels/right.jpg)] hidden sm:block h-80 lg:h-96 w-[190px] lg:w-[280px] bg-cover bg-center rounded-xl"
+						data-aos="zoom-in-right"
+					/>
+					<div className="absolute bottom-0 translate-y-[55%] translate-x-8 text-[6rem] md:text-[10rem] font-koulen">
+						<div
+							className="opacity-60"
+							data-aos="fade-right"
+						>
+							REELS
+						</div>
 						<Image
 							src={"/polygon.png"}
 							height={30}
@@ -263,24 +284,30 @@ export default function Home() {
 							alt=""
 							className="absolute top-1/2 right-0 translate-x-14"
 						/>
-					</p>
+					</div>
 				</div>
 
 				{/* What We Do */}
 				<div className="max-w-4xl mx-auto mt-32 px-4">
-					<p className="text-2xl text-justify mb-16">
+					<div
+						className="text-2xl text-justify mb-16"
+						data-aos="fade-up"
+					>
 						<span className="min-w-[20vw] mr-5 inline-block text-base text-secondary font-bold">
 							What We Do
 						</span>{" "}
 						We believe that we can live a world where every product or service
 						has an easy to use experience on all platforms. And our mission is
 						to make it happen.
-					</p>
+					</div>
 					<div className="flex flex-col gap-6">
 						<div className="w-full h-[2px] bg-slate-800 my-2" />
 						{services.whatWeDo?.map?.((what, index) => (
 							<React.Fragment key={index}>
-								<div className="flex flex-col md:flex-row gap-7 justify-between">
+								<div
+									className="flex flex-col md:flex-row gap-7 justify-between"
+									data-aos="fade-up"
+								>
 									<p className="text-2xl font-bold">
 										<span className="text-secondary font-extrabold">/</span>{" "}
 										{index + 1 < 10 ? <>0{index + 1}</> : index + 1}
@@ -292,15 +319,18 @@ export default function Home() {
 										<p className="font-serif text-sm text-justify">
 											{what.content}
 										</p>
-										<Link
+										{/* <Link
 											href={what.to}
 											className="text-xs text-primary tracking-[0.25rem] font-bold "
 										>
 											VIEW PROJECTS
-										</Link>
+										</Link> */}
 									</div>
 								</div>
-								<div className="w-full h-[2px] bg-slate-800 my-2" />
+								<div
+									className="w-full h-[2px] bg-slate-800 my-2"
+									data-aos="fade-down"
+								/>
 							</React.Fragment>
 						))}
 					</div>
@@ -314,6 +344,7 @@ export default function Home() {
 							style={{
 								lineHeight: 0.9,
 							}}
+							data-aos="fade-right"
 						>
 							<p>OUR</p>
 							<p>SHOWCASE</p>
@@ -337,11 +368,15 @@ export default function Home() {
 							style={{
 								lineHeight: 0.9,
 							}}
+							data-aos="fade-right"
 						>
 							<p>Say</p>
 							<p>HELLO,</p>
 						</div>
-						<div className="flex flex-row sm:items-end sm:justify-end">
+						<div
+							className="flex flex-row sm:items-end sm:justify-end"
+							data-aos="fade-up"
+						>
 							<p className="max-w-xs">
 								Feel free to contact us. We will get back to you as soon as we
 								can.

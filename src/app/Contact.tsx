@@ -5,15 +5,21 @@ import React from "react";
 const Contact = () => {
 	return (
 		<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:bg-[url('/contact/map.png')] bg-center bg-cover mix-blend-lighten px-4 mt-3">
-			<p className="relative">
+			<div
+				data-aos="fade-up"
+				className="relative"
+			>
 				We at Google map{" "}
 				<InlineIcon
 					icon={"guidance:up-arrow"}
 					className="inline-block text-secondary text-6xl rotate-45 absolute"
 				/>
-			</p>
+			</div>
 			<div className="flex flex-row justify-center sm:justify-end">
-				<form className="relative sm:max-w-xs flex flex-col gap-5 w-full min-h-[500px] font-serif mt-7">
+				<form
+					data-aos="fade-left"
+					className="relative sm:max-w-xs flex flex-col gap-5 w-full min-h-[500px] font-serif mt-7"
+				>
 					<div className="bg-gradient-to-r from-primary to-secondary pb-[2px]">
 						<input
 							className="w-full h-fit outline-none bg-background p-2 relative placeholder:font-bold placeholder:tracking-wider placeholder:opacity-50"
