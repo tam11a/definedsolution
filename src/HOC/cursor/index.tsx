@@ -28,7 +28,7 @@ const Cursor: React.FC = () => {
 		const pinkOne = document.getElementById("pink-cursor");
 		pinkOne!.style.top = `${pos.y - 50}px`;
 		pinkOne!.style.left = `${pos.x + 25}px`;
-		setPosition(pos);
+		// setPosition(pos);
 	};
 
 	React.useEffect(() => {
@@ -58,8 +58,8 @@ const Cursor: React.FC = () => {
 					className="bg-white rounded-full h-24 w-24"
 					style={{
 						position: "absolute",
-						top: position.y - 48,
-						left: position.x - 48,
+						// top: position.y - 48,
+						// left: position.x - 48,
 						transition: "ease-out 0.6s",
 					}}
 				/>
@@ -68,8 +68,8 @@ const Cursor: React.FC = () => {
 					className="bg-primary rounded-full h-24 w-24"
 					style={{
 						position: "absolute",
-						top: position.y - 6,
-						left: position.x + 23,
+						// top: position.y - 6,
+						// left: position.x + 23,
 						transition: "ease-out 0.8s",
 					}}
 				/>
@@ -78,8 +78,8 @@ const Cursor: React.FC = () => {
 					className="bg-secondary rounded-full h-24 w-24"
 					style={{
 						position: "absolute",
-						top: position.y - 50,
-						left: position.x + 25,
+						// top: position.y - 50,
+						// left: position.x + 25,
 						transition: "ease-out 1s",
 					}}
 				/>

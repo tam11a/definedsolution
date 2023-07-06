@@ -23,6 +23,10 @@ export default function Home() {
 		AOS.init({
 			duration: 1500,
 		});
+		animate();
+	}, []);
+
+	const animate = () => {
 		// desired effect, but needs to be seamless
 		// splash animation
 		gsap.from(".hero-logo", {
@@ -149,7 +153,7 @@ export default function Home() {
 				},
 			}
 		);
-	}, []);
+	};
 
 	return (
 		<>
@@ -174,11 +178,9 @@ export default function Home() {
 						<span className="font-semibold text-primary">Digital</span>{" "}
 						Solutions
 					</span>
-
-					<HaloEffect />
 				</h1>
 				{/* Marqueee */}
-				<div className="hero-marquee flex flex-col overflow-hidden relative mt-32 py-14 mix-blend-lighten">
+				<div className="hero-marquee flex flex-col overflow-hidden relative mt-20 py-14 mix-blend-lighten">
 					<div className="absolute z-10 top-0 left-0 w-full h-full bg-gradient-to-r from-background to-background via-transparent from-10% to-90%" />
 					<div
 						id="mrq-1"
@@ -240,6 +242,8 @@ export default function Home() {
 				</div>
 
 				{/* About */}
+
+				<HaloEffect />
 				<div data-aos="fade-up">
 					<p className="max-w-sm text-center mx-auto mt-5 text-sm sm:text-base">
 						At Defined Solution, We attract & retain quality customers with a{" "}

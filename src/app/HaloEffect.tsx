@@ -18,12 +18,12 @@ const Halo = () => {
 					gyroControls: true,
 					minHeight: 200.0,
 					minWidth: 200.0,
-					backgroundColor: 0x111111,
-					baseColor: 0x111111,
+					backgroundColor: "#0d141c",
+					baseColor: "#0d141c",
 					amplitudeFactor: 1.3,
 					xOffset: 0,
 					yOffset: 0,
-					size: 0.75,
+					size: 0.6,
 				})
 			);
 		}
@@ -35,7 +35,7 @@ const Halo = () => {
 
 	return (
 		<div
-			// className={styles.vanta}
+			className="relative h-[500px] w-[100vw] mix-blend-lighten"
 			ref={vantaContainerRef}
 		/>
 	);
