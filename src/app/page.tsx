@@ -24,6 +24,7 @@ export default function Home() {
 			duration: 1500,
 		});
 		animate();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const animate = () => {
