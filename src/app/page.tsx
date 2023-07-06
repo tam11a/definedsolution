@@ -12,7 +12,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import dynamic from "next/dynamic";
-// import HaloEffect from "./HaloEffect";
+import HaloEffect from "./HaloEffect";
 // const HaloEffect = dynamic(() => import("./HaloEffect"), {
 // 	ssr: false,
 // });
@@ -174,15 +174,9 @@ export default function Home() {
 						<span className="font-semibold text-primary">Digital</span>{" "}
 						Solutions
 					</span>
-					<Image
-						src={"/splash-curve.png"}
-						height={400}
-						width={550}
-						alt=""
-						className="hero-image mix-blend-screen w-3/4 sm:w-full max-w-sm absolute top-0 -translate-y-[5%] sm:-translate-y-[0%] left-1/2 -translate-x-1/2 select-none"
-					/>
+
+					<HaloEffect />
 				</h1>
-				{/* <HaloEffect /> */}
 				{/* Marqueee */}
 				<div className="hero-marquee flex flex-col overflow-hidden relative mt-32 py-14 mix-blend-lighten">
 					<div className="absolute z-10 top-0 left-0 w-full h-full bg-gradient-to-r from-background to-background via-transparent from-10% to-90%" />

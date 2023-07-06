@@ -1,59 +1,44 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-// const HALO = require("https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.halo.min.js");
+import { useEffect, useRef, useState } from "react";
 import HALO from "vanta/dist/vanta.halo.min";
 import * as THREE from "three";
+// import styles from "./Halo.module.css";
 
-const HaloEffect = () => {
+const Halo = () => {
 	const [vantaEffect, setVantaEffect] = useState<any>(null);
-	const myRef = useRef(null);
+	const vantaContainerRef = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
-		// const threeScript = document.createElement("script");
 		if (!vantaEffect) {
-			// threeScript.setAttribute("id", "threeScript");
-			// threeScript.setAttribute(
-			// 	"src",
-			// 	"https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"
-			// );
-			// document.getElementsByTagName("head")[0].appendChild(threeScript);
 			setVantaEffect(
 				HALO({
-					el: myRef.current,
+					el: vantaContainerRef.current,
+					THREE,
 					mouseControls: true,
 					touchControls: true,
-					gyroControls: false,
+					gyroControls: true,
 					minHeight: 200.0,
 					minWidth: 200.0,
-					THREE: THREE,
+					backgroundColor: 0x111111,
+					baseColor: 0x111111,
+					amplitudeFactor: 1.3,
+					xOffset: 0,
+					yOffset: 0,
+					size: 0.75,
 				})
 			);
 		}
+
 		return () => {
 			if (vantaEffect) vantaEffect.destroy();
-			// if (threeScript) {
-			// 	threeScript.remove();
-			// }
 		};
 	}, [vantaEffect]);
 
-	useEffect(() => {
-		if (typeof window == undefined) return;
-		try {
-			HALO({
-				el: "#halo-effect",
-				mouseControls: true,
-				touchControls: true,
-				gyroControls: false,
-				minHeight: 200.0,
-				minWidth: 200.0,
-			});
-		} catch (err) {
-			console.error(err);
-		}
-	}, []);
-
-	return <div id="halo-effect" />;
+	return (
+		<div
+			// className={styles.vanta}
+			ref={vantaContainerRef}
+		/>
+	);
 };
 
-export default HaloEffect;
+export default Halo;
