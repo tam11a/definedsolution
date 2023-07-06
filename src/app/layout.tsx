@@ -18,9 +18,12 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="bg-background h-full text-white">
+			<body className="bg-background h-full text-white overflow-y-hidden">
 				<CursorProvider />
-				<div className="relative">
+				<div
+					id="loading-body"
+					className="opacity-0 relative"
+				>
 					<Header />
 					{children}
 					<Footer />

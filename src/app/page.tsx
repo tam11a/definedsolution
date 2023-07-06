@@ -12,10 +12,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import dynamic from "next/dynamic";
-import HaloEffect from "./HaloEffect";
-// const HaloEffect = dynamic(() => import("./HaloEffect"), {
-// 	ssr: false,
-// });
+// import HaloEffect from "./HaloEffect";
+const HaloEffect = dynamic(() => import("./HaloEffect"), {
+	ssr: false,
+});
 // import Head from "next/head";
 
 export default function Home() {
@@ -27,6 +27,12 @@ export default function Home() {
 	}, []);
 
 	const animate = () => {
+		setTimeout(
+			() =>
+				document.getElementById("loading-body")?.classList.remove("opacity-0"),
+			1000
+		);
+		scrollToTop();
 		// desired effect, but needs to be seamless
 		// splash animation
 		gsap.from(".hero-logo", {
@@ -153,7 +159,14 @@ export default function Home() {
 				},
 			}
 		);
+
+		setTimeout(() => enableScroll(), 10000);
 	};
+
+	const scrollToTop = () => window.scrollTo(0, 0);
+
+	const enableScroll = () =>
+		document.querySelector("body")?.classList.remove("overflow-y-hidden");
 
 	return (
 		<>
@@ -162,13 +175,13 @@ export default function Home() {
 			</Head> */}
 			<main className="relative">
 				{/* Splash */}
-				<h1 className="hero-letters relative text-2xl sm:text-4xl md:text-5xl max-w-lg md:max-w-3xl text-center mx-auto mt-[15vh] !leading-snug px-3">
+				<h1 className="hero-letters relative text-2xl sm:text-4xl md:text-5xl max-w-lg md:max-w-3xl text-center mx-auto mt-[20vh] !leading-snug px-3">
 					<Image
 						src={"/title.svg"}
 						height={200}
 						width={130}
 						alt="defined solution"
-						className="hero-logo mx-auto mb-6"
+						className="hero-logo mx-auto mb-10"
 					/>
 					<span className="z-10 leading-snug">
 						From Pixels to{" "}
@@ -180,7 +193,7 @@ export default function Home() {
 					</span>
 				</h1>
 				{/* Marqueee */}
-				<div className="hero-marquee flex flex-col overflow-hidden relative mt-20 py-14 mix-blend-lighten">
+				<div className="hero-marquee flex flex-col overflow-hidden relative mt-28 py-14 mix-blend-lighten">
 					<div className="absolute z-10 top-0 left-0 w-full h-full bg-gradient-to-r from-background to-background via-transparent from-10% to-90%" />
 					<div
 						id="mrq-1"
@@ -243,7 +256,6 @@ export default function Home() {
 
 				{/* About */}
 
-				<HaloEffect />
 				<div data-aos="fade-up">
 					<p className="max-w-sm text-center mx-auto mt-5 text-sm sm:text-base">
 						At Defined Solution, We attract & retain quality customers with a{" "}
@@ -253,6 +265,7 @@ export default function Home() {
 						, that does not break the bank.
 					</p>
 				</div>
+				<HaloEffect />
 
 				{/* Reels */}
 				<div className="flex flex-row items-center gap-2 max-w-6xl mx-auto mt-10 px-4 relative">
