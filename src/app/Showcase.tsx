@@ -19,13 +19,13 @@ const Showcase: React.FC = () => {
 					alt="showcase 1"
 					className="h-full relative w-full object-cover"
 				/>
-				<div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
+				{/* <div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
 					<InlineIcon
 						icon={"icon-park-outline:dribble"}
 						className="inline-block mr-1"
 					/>
 					dribble
-				</div>
+				</div> */}
 			</Link>
 			<Link
 				href="#"
@@ -39,13 +39,13 @@ const Showcase: React.FC = () => {
 					alt="showcase 2"
 					className="h-full relative w-full object-cover"
 				/>
-				<div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
+				{/* <div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
 					<InlineIcon
 						icon={"icon-park-outline:dribble"}
 						className="inline-block mr-1"
 					/>
 					dribble
-				</div>
+				</div> */}
 			</Link>
 			<Link
 				href="#"
@@ -59,13 +59,13 @@ const Showcase: React.FC = () => {
 					alt="showcase 3"
 					className="h-full relative w-full object-cover"
 				/>
-				<div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
+				{/* <div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
 					<InlineIcon
 						icon={"ph:behance-logo-bold"}
 						className="inline-block mr-1"
 					/>
 					behance
-				</div>
+				</div> */}
 			</Link>
 			<Link
 				href="#"
@@ -79,13 +79,13 @@ const Showcase: React.FC = () => {
 					alt="showcase 4"
 					className="h-full relative w-full object-cover"
 				/>
-				<div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
+				{/* <div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
 					<InlineIcon
 						icon={"icon-park-outline:dribble"}
 						className="inline-block mr-1"
 					/>
 					dribble
-				</div>
+				</div> */}
 			</Link>
 			<Link
 				href="#"
@@ -99,13 +99,13 @@ const Showcase: React.FC = () => {
 					alt="showcase 5"
 					className="h-full relative w-full object-cover"
 				/>
-				<div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
+				{/* <div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
 					<InlineIcon
 						icon={"icon-park-outline:dribble"}
 						className="inline-block mr-1"
 					/>
 					dribble
-				</div>
+				</div> */}
 			</Link>
 			<Link
 				href="#"
@@ -119,13 +119,13 @@ const Showcase: React.FC = () => {
 					alt="showcase 6"
 					className="h-full relative w-full object-cover"
 				/>
-				<div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
+				{/* <div className="shadow absolute bg-background bottom-1 sm:bottom-2 left-1 sm:left-2 rounded-full text-xs sm:text-sm bg-opacity-60 font-bold px-2 py-1">
 					<InlineIcon
 						icon={"pixelarticons:external-link"}
 						className="inline-block mr-1"
 					/>
 					website
-				</div>
+				</div> */}
 			</Link>
 		</div>
 	);

@@ -84,25 +84,25 @@ export default {
 			to: "#",
 		},
 		{
-			title: "Interface Design",
+			title: "Graphics Design",
 			content:
 				"We consider user interaction with the interface. We pay special attention to hypothesis testing and prototyping, only the most successful solutions reach visualization.",
 			to: "#",
 		},
 		{
-			title: "Website Design",
+			title: "Website Design & Development",
 			content:
 				"We create a functional design in the style of aesthetics of minimalism. We add micro animations to sites that give a emotional response from users. Our sites are always adapt to all types of devices.",
 			to: "#",
 		},
 		{
-			title: "Mobile App Design",
+			title: "Mobile App Design & Development",
 			content:
 				"We create applications of any complexity for iOS, Android. Thanks to the built-in interaction logic visual part, our applications are pleasant and convenient to use, which ultimately brings high profit.",
 			to: "#",
 		},
 		{
-			title: "Video & Motion",
+			title: "Video & Motion Graphics",
 			content:
 				"We create applications of any complexity for iOS, Android. Thanks to the built-in interaction logic visual part, our applications are pleasant and convenient to use, which ultimately brings high profit.",
 			to: "#",

@@ -38,7 +38,7 @@ const Header: React.FC = () => {
 	return (
 		<nav className="sticky top-0 z-50 bg-background backdrop-filter backdrop-blur-md border-b border-slate-800 bg-opacity-30 font-serif">
 			<div className="max-w-5xl mx-auto px-4 py-3">
-				<div className="flex items-center justify-between sm:justify-center text-slate-400 text-xs tracking-widest font-semibold gap-x-4">
+				<div className="flex items-center justify-between sm:justify-center text-slate-200 text-sm tracking-widest font-semibold gap-x-4">
 					<button className="flex sm:hidden items-center gap-2 text-xs font-semibold tracking-widest text-white floating-nav">
 						<Icon
 							icon="iconamoon:menu-burger-horizontal-duotone"
